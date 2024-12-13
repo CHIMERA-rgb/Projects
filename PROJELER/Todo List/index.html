@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Yönetim Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Proje Yönetim Sistemi</h1>
+            <div class="navigation">
+                <button class="nav-btn" id="nav-dashboard">Anasayfa</button>
+                <button class="nav-btn" id="nav-projects">Projeler</button>
+                <button class="nav-btn" id="nav-team">Takımlar</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Bölümü -->
+        <div id="dashboard" class="dashboard">
+            <h3>Aktif Projeler</h3>
+            <div class="project-list">
+                <!-- Projeler Burada Listelenecek -->
+            </div>
+            <button id="new-project-btn" class="btn-primary">Yeni Proje Oluştur</button>
+        </div>
+
+        <!-- Proje Yönetimi Bölümü -->
+        <div id="project-management" class="project-management">
+            <h3>Proje Yönetimi</h3>
+            <div class="project-details">
+                <!-- Proje Detayları Burada Gösterilecek -->
+            </div>
+            <h4>Projeye Görev Ekle</h4>
+            <form id="task-form">
+                <textarea id="task-input" placeholder="Görev içeriğini buraya yazın..." required></textarea>
+                <div class="form-options">
+                    <input type="date" id="due-date" placeholder="Son Tarih">
+                    <select id="priority" required>
+                        <option value="low">Düşük Öncelik</option>
+                        <option value="medium">Orta Öncelik</option>
+                        <option value="high">Yüksek Öncelik</option>
+                    </select>
+                    <input type="text" id="tags" placeholder="Etiketler (virgülle ayırın)">
+                </div>
+                <button type="submit" id="btnAdd">Görevi Oluştur</button>
+            </form>
+            <div class="task-list">
+                <!-- Görevler Burada Görünecek -->
+            </div>
+        </div>
+
+        <div id="team-management" class="team-management">
+            <h3>Takım Üyeleri</h3>
+            <div class="team-members">
+                <!-- Takım Üyeleri Burada Görünecek -->
+            </div>
+            <button id="add-member-btn" class="btn-primary">Üye Ekle</button>
+            <div id="add-member-form" class="add-member-form" style="display:none;">
+                <h4>Yeni Üye Ekle</h4>
+                <form id="new-member-form">
+                    <input type="text" id="member-name" placeholder="Üye Adı" required>
+                    <input type="email" id="member-email" placeholder="Üye E-posta" required>
+                    <button type="submit" class="btn-primary">Ekle</button>
+                    <button type="button" id="cancel-member-btn" class="btn-secondary">İptal</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Proje Yönetim Sistemi. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

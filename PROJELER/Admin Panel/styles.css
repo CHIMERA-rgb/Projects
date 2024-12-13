@@ -1,0 +1,220 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ana container */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Header (Yönetici Paneli başlık kısmı) */
+.admin-header {
+    background-color: #1e1e2d;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logout-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #45a049;
+}
+
+/* İçerik Bölmesi */
+.admin-content {
+    margin-top: 30px;
+}
+
+/* Bütün bölüm başlıkları */
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Kart şeklinde içerik bölmeleri */
+.stats, .user-table, .latest-activities, .admin-info {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats:hover, .user-table:hover, .latest-activities:hover, .admin-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Grafik için container */
+.chart-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    background: #fafafa;
+    padding: 20px;
+}
+
+/* Tablo stil ayarları */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+table th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #2f2f3b;
+    font-size: 16px;
+}
+
+table td {
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+table tr:hover {
+    background-color: #f0f4f7;
+}
+
+/* Kullanıcı filtreleme */
+.filter-container {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.filter-container select {
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border 0.3s ease;
+}
+
+.filter-container select:hover {
+    border: 1px solid #4CAF50;
+}
+
+/* Son Etkinlikler */
+.latest-activities ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.latest-activities li {
+    background-color: #f8f8f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    border-left: 5px solid #4CAF50;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.latest-activities li:hover {
+    transform: translateX(5px);
+    background-color: #f1f1f5;
+}
+
+/* Yönetici bilgileri */
+.admin-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.admin-info p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.admin-info p i {
+    color: #4CAF50;
+}
+
+/* İkonlar ve stil efektleri */
+.admin-info p i {
+    margin-right: 10px;
+}
+
+/* Responsive ayarlar */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 15px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logout-btn {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .chart-container {
+        width: 10%;
+        height: 400px;  /* Yükseklik sabit kalabilir */
+        padding: 20px;
+        border-radius: 15px;
+        background: #fafafa;
+        box-sizing: border-box;
+        overflow: hidden; /* Panelin dışına taşmayı engelle */
+        margin-bottom: 30px;
+    }
+
+    #myChart {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

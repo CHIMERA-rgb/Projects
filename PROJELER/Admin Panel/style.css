@@ -1,0 +1,209 @@
+/* Genel stil ayarları */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #101820, #2A3D45);
+    color: #EAEAEA;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* Konteyner (form alanı) */
+.container {
+    background-color: rgba(27, 31, 35, 0.9); /* Yarı şeffaf arka plan */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+/* Başlık ve logo kısmı */
+header {
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 60px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Öne çıkan metin (link) */
+.highlight {
+    color: #38B6FF;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.highlight:hover {
+    color: #2A9DF4;
+}
+
+/* Form elemanları */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #EAEAEA;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+/* Focus durumları */
+form input:focus,
+form button:focus {
+    border-color: #38B6FF;
+    outline: none;
+    box-shadow: 0 0 8px rgba(56, 182, 255, 0.8);
+}
+
+/* Placeholder rengi */
+form input::placeholder,
+form button::placeholder {
+    color: #717171;
+}
+
+form input[type="password"]:focus::placeholder,
+form input[type="email"]:focus::placeholder {
+    color: #38B6FF;
+}
+
+/* Submit butonu */
+button[type="submit"] {
+    background-color: #38B6FF;
+    color: #101820;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(56, 182, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2A9DF4;
+    transform: translateY(-2px);
+}
+
+/* 'Or' ayırıcı */
+.or {
+    position: relative;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #717171;
+}
+
+.or::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid #717171;
+    z-index: -1;
+}
+
+/* Telefon numarasıyla giriş butonu */
+.sso {
+    background-color: #444;
+    color: #EAEAEA;
+    border: none;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sso:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Hukuki metinler */
+p {
+    font-size: 14px;
+    color: #EAEAEA;
+    margin-top: 20px;
+}
+
+p a {
+    color: #38B6FF;
+    text-decoration: none;
+    border-bottom: 1px solid #38B6FF;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #2A9DF4;
+}
+
+/* Ekstra bağlantılar */
+.extra p {
+    font-size: 14px;
+    color: #717171;
+    margin-top: 10px;
+}
+
+.extra p a {
+    color: #38B6FF;
+    text-decoration: none;
+}
+
+.extra p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+
+    form input,
+    form button,
+    .sso {
+        font-size: 14px;
+    }
+}

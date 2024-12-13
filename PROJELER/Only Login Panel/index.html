@@ -1,0 +1,52 @@
+
+<html>
+<head>
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <h2 class="title">Giriş Yap</h2>
+
+            <div class="error-message">
+                <p>Yanlış kullanıcı adı veya şifre.</p>
+            </div>
+
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" name="username" required placeholder="Kullanıcı adınızı girin">
+                </div>
+                <div class="input-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" required placeholder="Şifrenizi girin">
+                    <button type="button" class="show-password" onclick="togglePassword()">👁️</button>
+                </div>
+
+                <button type="submit" class="btn">Giriş Yap</button>
+
+                <div class="forgot-password">
+                    <a href="#">Şifrenizi mi unuttunuz?</a>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn">Google ile Giriş Yap</button>
+                    <button type="button" class="social-btn facebook-btn">Facebook ile Giriş Yap</button>
+                </div>
+
+                <div class="signup-link">
+                    Hesabınız yok mu? <a href="#">Kayıt Olun</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+        }
+    </script>
+</body>
+</html>

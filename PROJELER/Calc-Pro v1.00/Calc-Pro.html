@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #2e2e2e;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            width: 450px;
+        }
+
+        .value {
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 36px;
+            height: 80px;
+            width: 100%;
+            text-align: right;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            background-color: #444;
+            color: white;
+            font-size: 24px;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button:hover {
+            background-color: #5f6368;
+        }
+
+        .button:active {
+            background-color: #3a3a3a;
+        }
+
+        .button.double {
+            grid-column: span 2;
+        }
+
+        .button.equal {
+            background-color: #0b94f1;
+            color: white;
+        }
+
+        .button.clear {
+            background-color: #ff3b30;
+            color: white;
+        }
+
+        .button-function {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .button-backspace {
+            background-color: #ffab00;
+        }
+
+        /* Key press effect */
+        .button:active {
+            transform: scale(0.95);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="value" name="txt" readonly />
+        
+        <div class="button-row">
+            <button class="button clear" onclick="clearDisplay()">C</button>
+            <button class="button function" onclick="appendToDisplay('%')">%</button>
+            <button class="button function" onclick="appendToDisplay('/')">/</button>
+            <button class="button function" onclick="appendToDisplay('*')">*</button>
+        </div>
+        
+        <div class="button-row">
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button function" onclick="appendToDisplay('-')">-</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button function" onclick="appendToDisplay('+')">+</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button equal" onclick="calculateResult()">=</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button double" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button function" onclick="appendToDisplay('(')">(</button>
+            <button class="button function" onclick="appendToDisplay(')')">)</button>
+            <button class="button function" onclick="appendToDisplay('**')">x^y</button>
+            <button class="button backspace" onclick="backspace()">⌫</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button function" onclick="appendToDisplay('Math.sqrt(')">√</button>
+            <button class="button function" onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button class="button function" onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button class="button function" onclick="appendToDisplay('Math.tan(')">tan</button>
+        </div>
+    </div>
+
+    <script>
+        // Input alanına tuş basıldıkça değer ekleme
+        function appendToDisplay(value) {
+            document.querySelector('input[name="txt"]').value += value;
+        }
+
+        // Display temizleme
+        function clearDisplay() {
+            document.querySelector('input[name="txt"]').value = '';
+        }
+
+        // Geri al butonu
+        function backspace() {
+            let currentValue = document.querySelector('input[name="txt"]').value;
+            document.querySelector('input[name="txt"]').value = currentValue.slice(0, -1);
+        }
+
+        // Hesaplama işlemini yapma
+        function calculateResult() {
+            try {
+                let displayValue = document.querySelector('input[name="txt"]').value;
+
+                // Kareköklü ifadeleri işleme (Math.sqrt kullanarak)
+                displayValue = displayValue.replace(/Math\.sqrt\(([^)]+)\)/g, function(_, value) {
+                    return `Math.sqrt(${value})`;
+                });
+
+                // Üs (x^y) işlemi için ** yerine ^ sembolünü kullanma
+                displayValue = displayValue.replace(/\*\*/g, '^');
+
+                // eval() fonksiyonu ile matematiksel işlemi yapıyoruz
+                document.querySelector('input[name="txt"]').value = eval(displayValue);
+            } catch (e) {
+                // Hata durumunda 'Error' yazdırma
+                document.querySelector('input[name="txt"]').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

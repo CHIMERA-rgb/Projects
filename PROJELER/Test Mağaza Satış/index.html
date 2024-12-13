@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Detayları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Üst Kısım (Header) -->
+    <header>
+        <p>Harika Ürün Mağazası</p>
+    </header>
+
+    <!-- Kayan Yazılar Bölümü -->
+    <div class="scrolling-text">
+        <marquee behavior="scroll" direction="left">Ürünlerimizde %20'ye varan indirim fırsatlarını kaçırmayın!</marquee>
+    </div>
+
+    <main>
+        <!-- Ürün Detayları Bölümü -->
+        <div class="detail">
+            <div class="image-carousel">
+                <img src="image1.png" alt="Ürün Görseli 1" class="carousel-img" id="image">
+                <img src="image2.png" alt="Ürün Görseli 2" class="carousel-img">
+                <img src="image3.png" alt="Ürün Görseli 3" class="carousel-img">
+            </div>
+
+            <div class="content">
+                <h2 id="title">T-Shirt LD02</h2>
+                <p class="des" id="description">
+                    T-Shirt LD02, günlük kullanım için tasarlanmış rahat ve şık bir üründür. Yumuşak pamuklu kumaşı sayesinde cilt dostudur ve her mevsim kullanılabilir. Modern kesimi ve geniş renk seçenekleriyle tarzınızı tamamlayacak mükemmel bir seçenek. Hem spor hem de şık kombinler için ideal olan bu tişört, gardırobunuzun vazgeçilmezi olacak.
+                </p>
+
+                <p><b>Renkler</b></p>
+                <ul id="colors">
+                    <!-- Renk seçenekleri burada dinamik olarak eklenecek -->
+                </ul>
+
+                <p><b>Bedensel Seçenekler</b></p>
+                <ul id="sizes">
+                    <!-- Beden seçenekleri burada dinamik olarak eklenecek -->
+                </ul>
+
+                <div class="price">
+                    <span id="price">100 ~ 200</span>
+                </div>
+
+                <div class="buttons">
+                    <button id="add-to-cart">
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                        </svg>
+                        Sepete Ekle
+                    </button>
+                </div>
+
+                <!-- Sosyal Medya Paylaşım Butonları -->
+                <div class="social-media">
+                    <button>Facebook'ta Paylaş</button>
+                    <button>Twitter'da Paylaş</button>
+                    <button>Instagram'da Paylaş</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kampanya Zaman Sayacı -->
+        <section class="countdown">
+            <h2>Kampanya Bitişine Kalan Süre:</h2>
+            <div id="timer">
+                <p id="countdown-timer">00:00:00</p>
+            </div>
+        </section>
+
+        <!-- İlgili Ürünler Bölümü -->
+        <div class="related-products">
+            <div>
+                <img src="related-product1.jpg" alt="İlgili Ürün 1">
+                <h3>Ürün 1</h3>
+            </div>
+            <div>
+                <img src="related-product2.jpg" alt="İlgili Ürün 2">
+                <h3>Ürün 2</h3>
+            </div>
+            <div>
+                <img src="related-product3.jpg" alt="İlgili Ürün 3">
+                <h3>Ürün 3</h3>
+            </div>
+        </div>
+
+        <!-- Yıldızlı Derecelendirme ve Yorumlar Bölümü -->
+        <section class="reviews-section">
+            <h3>Müşteri Yorumları</h3>
+            <div class="reviews-list">
+                <div class="review">
+                    <div class="review-title">Harika Ürün!</div>
+                    <div class="review-rating">
+                        ★★★★☆
+                    </div>
+                    <div class="review-text">Bu ürün tam ihtiyacım olan şeydi. Yüksek kalite ve fiyatına değiyor!</div>
+                </div>
+                <div class="review">
+                    <div class="review-title">İyi Değer</div>
+                    <div class="review-rating">
+                        ★★★☆☆
+                    </div>
+                    <div class="review-text">Fiyatına göre çok iyi kalite. Satın aldığım için çok memnunum.</div>
+                </div>
+            </div>
+
+            <!-- Yorum Ekleme Bölümü -->
+            <div class="add-review">
+                <textarea placeholder="Yorumunuzu buraya yazın..."></textarea>
+                <button>Yorumu Gönder</button>
+            </div>
+        </section>
+
+        <!-- Yüksek Kaliteli Görseller -->
+        <section class="high-quality-images">
+            <h2>Ürün Görselleri</h2>
+            <div>
+                <img src="high-quality-image1.jpg" alt="Yüksek Kalite Görsel 1">
+                <img src="high-quality-image2.jpg" alt="Yüksek Kalite Görsel 2">
+            </div>
+        </section>
+    </main>
+
+    <!-- Bildirimler (Notifications) -->
+    <div id="notification" class="notification">
+        Ürün sepete eklendi!
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

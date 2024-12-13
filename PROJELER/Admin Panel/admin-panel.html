@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Paneli</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" width="50">
+            </div>
+            <h1>Yönetici Paneli</h1>
+            <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+        </header>
+
+        <div class="admin-content">
+            <!-- Grafik Bölümü -->
+            <section class="stats">
+                <h2>Site İstatistikleri</h2>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Kullanıcı Tablosu -->
+            <section class="user-table">
+                <h2>Kullanıcılar</h2>
+                <div class="filter-container">
+                    <label for="status-filter">Duruma Göre Filtrele:</label>
+                    <select id="status-filter" onchange="filterUsers()">
+                        <option value="all">Tümü</option>
+                        <option value="active">Aktif</option>
+                        <option value="inactive">Pasif</option>
+                    </select>
+                </div>
+                <table id="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ad Soyad</th>
+                            <th>E-posta</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <td>1</td>
+                            <td>Emirhan Yılmaz</td>
+                            <td>emirhan.yilmaz@example.com</td>
+                            <td class="status">Aktif</td>
+                        </tr>
+                        <tr class="inactive">
+                            <td>2</td>
+                            <td>Deniz Kaya</td>
+                            <td>deniz.kaya@example.com</td>
+                            <td class="status">Pasif</td>
+                        </tr>
+                        <tr class="active">
+                            <td>3</td>
+                            <td>Aylin Çelik</td>
+                            <td>aylin.celik@example.com</td>
+                            <td class="status">Aktif</td>
+                        </tr>
+                        <tr class="inactive">
+                            <td>4</td>
+                            <td>Baran Demir</td>
+                            <td>baran.demir@example.com</td>
+                            <td class="status">Pasif</td>
+                        </tr>
+                        <tr class="active">
+                            <td>5</td>
+                            <td>Selin Korkmaz</td>
+                            <td>selin.korkmaz@example.com</td>
+                            <td class="status">Aktif</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Son Etkinlikler -->
+            <section class="latest-activities">
+                <h2>Son Etkinlikler</h2>
+                <ul>
+                    <li>Emirhan Yılmaz, 5 dakika önce siteye giriş yaptı.</li>
+                    <li>Deniz Kaya, 20 dakika önce şifresini değiştirdi.</li>
+                    <li>Aylin Çelik, 30 dakika önce yorum yaptı.</li>
+                    <li>Baran Demir, 45 dakika önce profilini güncelledi.</li>
+                    <li>Selin Korkmaz, 1 saat önce yeni bir mesaj gönderdi.</li>
+                </ul>
+            </section>
+
+            <!-- Yönetici Bilgileri -->
+            <section class="admin-info">
+                <h2>Yönetici Bilgileri</h2>
+                <p><strong>Ad Soyad:</strong> Mehmet S.</p>
+                <p><strong>Email:</strong> admin@example.com</p>
+                <p><strong>Son Giriş:</strong> 1 gün önce</p>
+                <p><strong>Telefon:</strong> +90 555 123 4567</p>
+                <p><strong>Son Güncelleme:</strong> 3 saat önce</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Çıkış yapma fonksiyonu
+        function logout() {
+            // Kullanıcıyı giriş sayfasına yönlendirme
+            window.location.href = "login.html";
+        }
+
+      // Grafik için Chart.js
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',  // Grafik türü olarak 'line' seçildi
+    data: {
+        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+        datasets: [{
+            label: 'Ziyaretçi Sayısı',
+            data: [1200, 1900, 1300, 1500, 1700, 1600],
+            fill: true,
+            backgroundColor: 'rgba(38, 194, 129, 0.2)',
+            borderColor: 'rgba(38, 194, 129, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,  // Grafiği ekran boyutlarına göre otomatik ayarla
+        maintainAspectRatio: false,  // Yükseklik ve genişlik oranını korumaz
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 500
+                }
+            }
+        }
+    }
+});
+
+
+        // Kullanıcıları duruma göre filtreleme fonksiyonu
+        function filterUsers() {
+            const filterValue = document.getElementById('status-filter').value;
+            const rows = document.querySelectorAll('#user-table tbody tr');
+
+            rows.forEach(row => {
+                const status = row.querySelector('.status').textContent.toLowerCase();
+                if (filterValue === 'all' || status === filterValue) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

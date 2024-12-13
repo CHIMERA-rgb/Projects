@@ -1,0 +1,311 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: #5e4b8b;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4b3977;
+}
+
+/* Header */
+header {
+    background-color: #3b2f61;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+header figure img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #5e4b8b;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(135deg, #6a4c93, #ad66c9);
+    color: white;
+    text-align: center;
+    position: relative;  /* Canvas'ı düzgün yerleştirebilmek için */
+    padding: 120px 20px;
+    overflow: hidden;  /* Canvas'ın dışarı taşmasını engellemek için */
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.banner h4 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+.banner button {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: #ff6b6b;
+    transition: background-color 0.3s;
+}
+
+.banner button:hover {
+    background-color: #ff4757;
+}
+
+/* Canvas Ayarları */
+#dotsCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Canvas'ın arka planda olmasını sağlar */
+    pointer-events: none;  /* Kullanıcı etkileşimleri (mousemove, etc.) canvas'a etki etmesin */
+}
+
+/* Kurslar Bölümü */
+#courses {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5e4b8b;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.course-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.course-item i {
+    font-size: 3rem;
+    color: #6a4c93;
+    margin-bottom: 20px;
+}
+
+.course-item h3 {
+    font-size: 1.6rem;
+    color: #3b2f61;
+    margin-bottom: 10px;
+}
+
+.course-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+/* Eğitmenler Bölümü */
+#instructors {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#instructors h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #5e4b8b;
+}
+
+.instructor-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.instructor {
+    background-color: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.instructor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.instructor img {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.instructor h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #3b2f61;
+}
+
+.instructor p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Yorumlar Bölümü */
+#reviews {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#reviews h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5e4b8b;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.review-card {
+    background-color: #f7f7f7;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.review-card blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #3b2f61;
+}
+
+.review-card p {
+    font-size: 1rem;
+}
+
+/* Abone Ol Bölümü */
+#subscribe {
+    background-color: #6a4c93;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#subscribe h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#subscribe p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#subscribe button {
+    font-size: 1.3rem;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color: #ff6b6b;
+    transition: background-color 0.3s;
+}
+
+#subscribe button:hover {
+    background-color: #ff4757;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviews-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Geliştirme Kursları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="../canvas/logo.png" alt="Logo">
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#courses">Kurslar</a></li>
+                <li><a href="#instructors">Eğitmenler</a></li>
+                <li><a href="#reviews">Yorumlar</a></li>
+                <li><a href="#subscribe">Abone Ol</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home" class="banner">
+            <div>
+                <h1 class="left">Web Geliştirmeyi Öğrenin</h1>
+                <h1 class="right">JavaScript ve Animasyonlarla</h1>
+            </div>
+            <h4>
+                Çarpıcı web siteleri ve animasyonlar yaratmayı öğrenin.
+                <br>Tüm kurslarımıza erişim sağlamak için abone olun.
+            </h4>
+            <button>Abone Ol &#8599</button>
+
+            <canvas id="dotsCanvas"></canvas>
+        </section>
+
+        <!-- Kurslar Bölümü -->
+        <section id="courses" class="info-section">
+            <h2>Web Geliştirme Kurslarımız</h2>
+            <p>Başlangıçtan ileri seviyeye kadar tasarlanmış web geliştirme kurslarımızı keşfedin.</p>
+            <div class="course-list">
+                <div class="course-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Geliştirmeye Giriş</h3>
+                    <p>HTML, CSS ve JavaScript'in temellerini öğrenin. İlk web sitenizi oluşturun!</p>
+                    <button>Başlat &#8599</button>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>İleri Düzey JavaScript Animasyonları</h3>
+                    <p>JavaScript ile etkileşimli ve dinamik animasyonlar yaratmayı öğrenin.</p>
+                    <button>Başlat &#8599</button>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Web Tasarımı</h3>
+                    <p>HTML ve CSS kullanarak tüm cihazlarda harika görünen responsive web siteleri tasarlayın.</p>
+                    <button>Başlat &#8599</button>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Veri Görselleştirme</h3>
+                    <p>Verileri görsel olarak etkili bir şekilde sunmak için JavaScript ve d3.js kullanmayı öğrenin.</p>
+                    <button>Başlat &#8599</button>
+                </div>
+                <div class="course-item">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Geliştirme</h3>
+                    <p>Node.js ve Express.js ile sunucu tarafı programlama ve API geliştirmeyi öğrenin.</p>
+                    <button>Başlat &#8599</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eğitmenler Bölümü -->
+        <section id="instructors" class="features">
+            <h2>Eğitmenlerimizle Tanışın</h2>
+            <div class="instructor-list">
+                <div class="instructor">
+                    <img src="instructor1.jpg" alt="Eğitmen 1">
+                    <h3>John Doe</h3>
+                    <p>JavaScript ve Web Animasyonları konusunda uzman. Sektörde 10+ yıl deneyimi var.</p>
+                </div>
+                <div class="instructor">
+                    <img src="instructor2.jpg" alt="Eğitmen 2">
+                    <h3>Jane Smith</h3>
+                    <p>Önyüz geliştiricisi ve UI/UX uzmanı. Responsive web tasarımına tutkulu.</p>
+                </div>
+                <div class="instructor">
+                    <img src="instructor3.jpg" alt="Eğitmen 3">
+                    <h3>Mark Lee</h3>
+                    <p>Backend geliştirme konusunda derinlemesine bilgiye sahip, JavaScript ve Node.js uzmanı.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yorumlar Bölümü -->
+        <section id="reviews" class="reviews-section">
+            <h2>Öğrencilerimiz Ne Diyor?</h2>
+            <p>Öğrencilerimizin kurslarımız hakkındaki görüşlerini görün.</p>
+            <div class="reviews-list">
+                <div class="review-card">
+                    <blockquote>"Kurslar çok anlaşılır ve ilk web sitemi yapmamda çok yardımcı oldu!"</blockquote>
+                    <p><strong>Ahmet Yılmaz</strong> - Web Developer</p>
+                </div>
+                <div class="review-card">
+                    <blockquote>"JavaScript ile animasyonları öğrenmek, web sitemi interaktif ve eğlenceli hale getirdi!"</blockquote>
+                    <p><strong>Ayşe Demir</strong> - Front-End Developer</p>
+                </div>
+                <div class="review-card">
+                    <blockquote>"Responsive tasarım konusunda çok şey öğrendim. Artık her cihazda düzgün çalışan web siteleri tasarlayabiliyorum!"</blockquote>
+                    <p><strong>Mehmet Korkmaz</strong> - UI/UX Designer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abone Ol Bölümü -->
+        <section id="subscribe" class="subscribe">
+            <h2>Yeni Kurslardan Haberdar Olun</h2>
+            <p>Yeni kurslar ve dersler yayımlandığında bildirim almak için abone olun.</p>
+            <button>Abone Ol</button>
+        </section>
+    </main>    
+
+    <script src="app.js"></script>
+</body>
+</html>
